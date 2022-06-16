@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="481" pageHeight="425" columnWidth="441" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbf7faf8-7131-4e30-83df-89bceb19a4b0">
+	<property name="ireport.zoom" value="1.4641000000000028"/>
+	<property name="ireport.x" value="28"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT tbbatik.kode_batik, tbbatik.kode_pemasok, tbbatik.nama_batik, tbbatik.harga_beli, tbbatik.harga_jual, tbstok.stok FROM tbbatik INNER JOIN tbstok ON tbbatik.kode_batik = tbstok.kode_batik]]>
+	</queryString>
+	<field name="kode_batik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_pemasok" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_batik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_beli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_jual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stok" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="nama_batik_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nama_batik}]]></variableExpression>
+	</variable>
+	<variable name="nama_batik_2" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nama_batik}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<image>
+				<reportElement positionType="Float" x="147" y="58" width="146" height="18" uuid="38b446f1-be2d-4153-b91e-3f0bdcf645ce"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Downloads\\TUBES PBO\\SISTEM PENJUALAN BATIK.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="185" y="0" width="67" height="20" uuid="375d0333-90f7-4819-b3f1-883be1de8201"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<text><![CDATA[eReport Batik]]></text>
+			</staticText>
+			<image>
+				<reportElement positionType="Float" x="173" y="24" width="102" height="29" uuid="6a80b7b5-a955-4336-8ac6-26d54118095b"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Downloads\\TUBES PBO\\Group 68.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="3" width="441" height="1" uuid="14f503f5-e140-4bb1-939e-b73dbde5d956"/>
+			</line>
+			<line>
+				<reportElement x="0" y="31" width="441" height="1" uuid="f58eb807-d7f2-4f49-9937-b22e3a9f03f9"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="8" width="67" height="20" uuid="ac7d91ba-35be-4c49-b374-6698decdfa56"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Batik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="8" width="92" height="20" uuid="9243e466-14ea-470e-98c4-9369e0952625"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Pemasok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="8" width="92" height="20" uuid="2b10640a-ea57-4c68-bc07-064bf4129368"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Batik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="8" width="41" height="20" uuid="3d6f6e06-4843-41fb-87d4-456bf012fd91"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="8" width="62" height="20" uuid="b5aa8392-a36f-4363-8a66-ac28cdfef187"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Beli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="8" width="62" height="20" uuid="1e9290e7-27d9-4c11-ba82-030259a75ba7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="67" height="20" uuid="8f6f2824-3570-4362-a8d8-32335b698744"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode_batik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="2" width="92" height="20" uuid="8ee1e50b-0162-4345-88bd-f06b95558219"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode_pemasok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="1" width="92" height="20" uuid="cc8d014c-05b1-4988-9f1d-7efd223a386d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_batik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="2" width="41" height="20" uuid="3a24b2d2-1edc-4f70-80af-1c842f539b54"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="1" width="62" height="20" uuid="a4f850d2-547b-4c11-be27-5982c38b20b6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="2" width="62" height="20" uuid="23376639-901b-45c3-bb77-2733443590a1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_jual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="13" width="441" height="1" uuid="ff888db4-8836-4c94-a91a-60faa97b9ef0"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

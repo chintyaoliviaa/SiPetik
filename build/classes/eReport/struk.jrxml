@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="340" pageHeight="425" columnWidth="300" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbf7faf8-7131-4e30-83df-89bceb19a4b0">
+	<property name="ireport.zoom" value="1.7715610000000035"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbtransaksi.kode_transaksi, tbtransaksi.tgl_transaksi, tbtransaksi.kode_kasir, tbtransaksi.nama_kasir, tbtransaksi.total, tbtransaksi.bayar, tbtransaksi.kembali, tbdetail.nama_batik, tbdetail.harga, tbdetail.jumlah_beli, tbdetail.subtotal FROM tbtransaksi INNER JOIN tbdetail ON tbtransaksi.kode_transaksi = tbdetail.kode_transaksi WHERE tbtransaksi.kode_transaksi IN (SELECT MAX(tbtransaksi.kode_transaksi)FROM tbtransaksi)]]>
+	</queryString>
+	<field name="kode_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_kasir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_kasir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kembali" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_batik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_beli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subtotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="nama_batik_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nama_batik}]]></variableExpression>
+	</variable>
+	<variable name="nama_batik_2" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nama_batik}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="115" y="-4" width="67" height="20" uuid="375d0333-90f7-4819-b3f1-883be1de8201"/>
+				<textElement>
+					<font fontName="Poppins"/>
+				</textElement>
+				<text><![CDATA[Struk Belanja]]></text>
+			</staticText>
+			<image>
+				<reportElement positionType="Float" x="103" y="20" width="102" height="29" uuid="6a80b7b5-a955-4336-8ac6-26d54118095b"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Downloads\\TUBES PBO\\Group 68.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" x="77" y="55" width="146" height="18" uuid="38b446f1-be2d-4153-b91e-3f0bdcf645ce"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Downloads\\TUBES PBO\\SISTEM PENJUALAN BATIK.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="20" uuid="9d5a5624-f65f-48f0-a906-9290af1f9fff"/>
+				<textElement>
+					<font fontName="Poppins" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="10" width="65" height="20" uuid="eb0b143e-427d-4d1c-930f-570e4c08d3d7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_kasir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="10" width="55" height="20" uuid="d8b7ccaf-6dd2-46e6-99fc-e9f846c3b959"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode_kasir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="225" y="10" width="8" height="20" uuid="2ac3dfef-b5f8-45a3-a600-c7bfea9ccbfc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="300" height="1" uuid="14f503f5-e140-4bb1-939e-b73dbde5d956"/>
+			</line>
+			<line>
+				<reportElement x="0" y="31" width="300" height="1" uuid="f58eb807-d7f2-4f49-9937-b22e3a9f03f9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="20" uuid="23a4b2ae-83f7-447e-bf23-e8e83f052e6a"/>
+				<textElement>
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_batik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="3" width="55" height="20" uuid="9450312d-85a5-43ba-9b57-056ac8d96bec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="3" width="21" height="20" uuid="72dbd92f-7021-40b0-a2b4-a26479e6d250"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="3" width="38" height="20" uuid="ee5a2a45-61a7-4ee4-b1aa-6a5b1c523a9d"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="67" height="20" uuid="ac7d91ba-35be-4c49-b374-6698decdfa56"/>
+				<textElement>
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="300" height="1" uuid="ff888db4-8836-4c94-a91a-60faa97b9ef0"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="30" width="67" height="20" uuid="d0fa51b4-695f-4d90-9ec0-af04f97acc14"/>
+				<textElement>
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tunai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="48" width="67" height="20" uuid="98d7a1e8-2fa6-4255-be0b-53d4d55aa269"/>
+				<textElement>
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembali]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="71" width="300" height="1" uuid="7e7faa99-d76c-4f4c-bea4-b0e3a860a013"/>
+			</line>
+			<line>
+				<reportElement x="0" y="74" width="300" height="1" uuid="ca43dac1-bd45-4b24-915b-b111d76bb63a"/>
+			</line>
+			<textField>
+				<reportElement x="257" y="10" width="43" height="20" uuid="15a29717-4f7b-4041-9f97-b7928b6612f1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="28" width="41" height="20" uuid="0bbfadcd-6ab1-4ead-a602-ee92c8e3022f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="48" width="41" height="20" uuid="899ed891-785b-4fdc-9bb0-157a914c9e24"/>
+				<textElement textAlignment="Right">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kembali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="102" width="100" height="20" uuid="eb438032-e005-4246-918b-3d672808896e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Poppins"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_transaksi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
